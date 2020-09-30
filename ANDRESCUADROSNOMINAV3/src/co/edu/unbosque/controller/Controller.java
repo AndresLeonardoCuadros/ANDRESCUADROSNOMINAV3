@@ -5,14 +5,16 @@ import co.edu.unbosque.view.View;
 
 public class Controller {
 
-	View v;
-	NominaFile nf;
+	private View v;
+	private NominaFile nf;
 
 	public Controller() {
+		nf = new NominaFile();
+		v = new View();
 
-	}
-
-	public void Mostrar() {
 		v.mostrarMensaje(nf.ImprimirDatos());
+		v.mostrarMensaje(nf.GenerarNomina());
+
 	}
+
 }

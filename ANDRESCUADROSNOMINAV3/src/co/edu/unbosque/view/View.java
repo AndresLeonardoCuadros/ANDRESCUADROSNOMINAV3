@@ -4,8 +4,8 @@ import javax.swing.JOptionPane;
 
 public class View {
 
-	public void mostrarMensaje(String men) {
-		JOptionPane.showMessageDialog(null, men);
+	public void  mostrarMensaje(String men) {
+		 JOptionPane.showMessageDialog(null, men,"Lista", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 }

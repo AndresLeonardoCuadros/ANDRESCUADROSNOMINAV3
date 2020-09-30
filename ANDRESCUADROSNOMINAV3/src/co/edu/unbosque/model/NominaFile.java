@@ -9,8 +9,12 @@ public class NominaFile {
 	public String ImprimirDatos() {
 		String cadena = "Documento" + " ; " + "     Nombre     " + " ; " + "Salario\n";
 		int i = 0;
-		while (i <= tf.getDocumento().length) {
-			cadena = cadena + tf.getDocumento()[i] + " ; " + tf.getNombre()[i] + " ; " + tf.getSalario()[i] + "\n";
+		try {
+			while (i <= tf.getDocumento().length - 1) {
+				cadena = cadena + tf.getDocumento()[i] + " ; " + tf.getNombre()[i] + " ; " + tf.getSalario()[i] + "\n";
+			}
+		} catch (Exception e) {
+			return "" + e;
 		}
 
 		return cadena;
@@ -21,25 +25,29 @@ public class NominaFile {
 		String cadena1 = "Nomina1\n" + "Documento" + " -- " + "Salario\n";
 		String cadena2 = "Nomina2\n" + "Documento" + " -- " + "Salario\n";
 		String cadena3 = "Nomina3\n" + "Documento" + " -- " + "Salario\n";
-		while (i <= tf.getDocumento().length) {
-			if (tf.getSalario()[i] <= 2000) {
-				double s1 = (tf.getSalario()[i] - (tf.getSalario()[i] * 10) / 100);
-				cadena1 = cadena1 + tf.getDocumento()[i] + " -- " + s1 + "\n";
-				i++;
+		try {
+			while (i <= tf.getDocumento().length - 1) {
+				if (tf.getSalario()[i] <= 2000) {
+					double s1 = (tf.getSalario()[i] - (tf.getSalario()[i] * 10) / 100);
+					cadena1 = cadena1 + tf.getDocumento()[i] + " -- " + s1 + "\n";
+					i++;
 
-			} else if (tf.getSalario()[i] > 2000 && tf.getSalario()[i] <= 5000) {
-				double s2 = (tf.getSalario()[i] - (tf.getSalario()[i] * 15) / 100);
-				cadena2 = cadena2 + tf.getDocumento()[i] + " -- " + s2 + "\n";
-				i++;
+				} else if (tf.getSalario()[i] > 2000 && tf.getSalario()[i] <= 5000) {
+					double s2 = (tf.getSalario()[i] - (tf.getSalario()[i] * 15) / 100);
+					cadena2 = cadena2 + tf.getDocumento()[i] + " -- " + s2 + "\n";
+					i++;
 
-			} else if (tf.getSalario()[i] > 5000) {
-				double s3 = (tf.getSalario()[i] - (tf.getSalario()[i] * 20) / 100);
-				cadena3 = cadena3 + tf.getDocumento()[i] + " -- " + s3 + "\n";
-				i++;
+				} else if (tf.getSalario()[i] > 5000) {
+					double s3 = (tf.getSalario()[i] - (tf.getSalario()[i] * 20) / 100);
+					cadena3 = cadena3 + tf.getDocumento()[i] + " -- " + s3 + "\n";
+					i++;
 
+				}
 			}
-
+		} catch (Exception e) {
+			return "" + e;
 		}
+
 		tf.EscribirArchivos(cadena1, cadena2, cadena3);
 		return "";
 	}

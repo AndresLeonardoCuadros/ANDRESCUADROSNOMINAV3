@@ -5,9 +5,9 @@ import java.io.*;
 public class TrabajoFile {
 
 	private String archivo = "./data/datosprincipales.csv";
-	private String n1 = "./data/Nomina1";
-	private String n2 = "./data/Nomina2";
-	private String n3 = "./data/Nomina3";
+	private String n1 = "./data/Nomina1.txt";
+	private String n2 = "./data/Nomina2.txt";
+	private String n3 = "./data/Nomina3.txt";
 	private String[] documento;
 	private String[] nombre;
 	private double[] salario;
