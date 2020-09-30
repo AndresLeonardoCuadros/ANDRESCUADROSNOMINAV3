@@ -55,8 +55,8 @@ public class TrabajoFile {
 			fw2.close();
 
 			FileWriter fw3 = new FileWriter(n3);
-			PrintWriter p3 = new PrintWriter(fw3);
-			p3.println(d3);
+			PrintWriter pw3 = new PrintWriter(fw3);
+			pw3.println(d3);
 			fw3.close();
 
 		} catch (IOException e) {
